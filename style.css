@@ -131,7 +131,9 @@ ul {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4);
+    background-color: #e60000;
+    color: var(--white) !important;
 }
 
 .btn-outline {
@@ -209,43 +211,81 @@ nav.scrolled {
 
 /* --- Mobile Responsive --- */
 @media (max-width: 992px) {
+    .container {
+        padding: 0 5%;
+    }
+    .hero-content {
+        padding: 2rem 0;
+    }
     .case-study {
         grid-template-columns: 1fr;
         gap: 2rem;
+        margin-bottom: 4rem;
     }
     .case-study:nth-child(even) {
         direction: ltr;
     }
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
+    .case-visual {
+        height: 300px;
     }
     .contact-container {
         grid-template-columns: 1fr;
         padding: 2rem;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+        min-height: auto;
+    }
     .nav-links {
         display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
         background: var(--white);
         flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-        box-shadow: var(--shadow-premium);
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 2rem;
+        gap: 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: var(--transition);
     }
     .nav-links.active {
         display: flex;
+        transform: translateX(0);
     }
     .nav-toggle {
         display: block;
+        z-index: 1001;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .services-grid, .pricing-grid, .icp-grid, .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-links {
+        text-align: center;
     }
 }
 
