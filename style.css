@@ -20,6 +20,19 @@
     --shadow-red: 0 10px 30px rgba(255, 0, 0, 0.2);
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* --- Custom Cursor --- */
 .cursor-dot {
     width: 8px;
@@ -213,6 +226,8 @@ nav.scrolled {
 @media (max-width: 992px) {
     .container {
         padding: 0 5%;
+        width: 100%;
+        overflow: hidden;
     }
     .hero-content {
         padding: 2rem 0;
