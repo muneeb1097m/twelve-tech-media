@@ -180,18 +180,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form Submission Simulation
+    // Webhook Submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
+            const originalBtnText = btn.innerText;
+            
             btn.innerText = 'Sending...';
-            setTimeout(() => {
-                btn.innerText = 'Message Sent!';
-                btn.style.background = '#27c93f';
-                contactForm.reset();
-            }, 1500);
+            btn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://services.leadconnectorhq.com/hooks/nkOG8YDt5FCP8gQtdGjt/webhook-trigger/c0657027-f0f3-4669-8791-df2a10ee3cf2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    btn.innerText = 'Message Sent!';
+                    btn.style.background = '#27c93f';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Server responded with ' + response.status);
+                }
+                
+                setTimeout(() => {
+                    btn.innerText = originalBtnText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+
+            } catch (error) {
+                console.error('Submission Error:', error);
+                btn.innerText = 'Error! Try Again';
+                btn.style.background = '#ff5f56';
+                setTimeout(() => {
+                    btn.innerText = originalBtnText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }
         });
     }
 
