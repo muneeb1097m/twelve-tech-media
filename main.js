@@ -155,6 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const posX = e.clientX;
         const posY = e.clientY;
 
+        // Show cursors on first move
+        cursorDot.style.opacity = "1";
+        cursorOutline.style.opacity = "1";
+
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
@@ -245,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Swiper Testimonials
     const testimonialSwiper = new Swiper('.testimonial-swiper', {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 30,
         loop: true,
         autoplay: {
@@ -261,10 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.swiper-button-prev-custom',
         },
         breakpoints: {
-            768: {
-                slidesPerView: 2,
+            320: {
+                slidesPerView: 1,
             },
-            1024: {
+            768: {
                 slidesPerView: 2,
             }
         }

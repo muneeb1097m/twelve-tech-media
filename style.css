@@ -42,7 +42,9 @@ html, body {
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s;
+    transition: transform 0.1s, opacity 0.3s;
+    opacity: 0;
+    transform: translate(-50%, -50%);
 }
 
 .cursor-outline {
@@ -54,6 +56,8 @@ html, body {
     pointer-events: none;
     z-index: 9998;
     transition: transform 0.15s, opacity 0.3s;
+    opacity: 0;
+    transform: translate(-50%, -50%);
 }
 
 @media (max-width: 768px) {
