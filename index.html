@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     <div class="cursor-dot"></div>
@@ -31,7 +33,7 @@
         <div class="dot-grid"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>We build high-converting websites that turn your visitors into <span>paying customers</span></h1>
+                <h1>Scale your agency without hiring a <span>single developer</span></h1>
                 <p>Premium white-label development for US agencies. We handle the code, you take the credit.</p>
                 <div class="hero-cta">
                     <a href="https://calendly.com/twelvetechmedia/15min" class="btn btn-primary">Book 15-Min Strategy Call</a>
@@ -250,31 +252,48 @@
             </div>
         </div>
     </section>
-
-    <section class="section" style="background: var(--dark-bg); color: white;">
+    <section class="section" style="background: var(--dark-bg); color: white; overflow: hidden;">
         <div class="container">
-            <h2 style="color: white;">Client Testimonials</h2>
-            <div class="testimonial-grid" style="margin-top: 3rem;">
-                <div class="testimonial-card" style="color: var(--dark-bg);">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Faizan built an amazing AI marketing agency website for me... The visuals, animations and overall layout were executed flawlessly. Extremely happy!"</p>
-                    <div class="testimonial-author">yvoneesmith 🇺🇸</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+                <h2 style="color: white; margin-bottom: 0;">Client Testimonials</h2>
+                <div class="swiper-navigation" style="display: flex; gap: 1rem;">
+                    <div class="swiper-button-prev-custom" style="cursor: pointer; width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);"><i class="fas fa-chevron-left"></i></div>
+                    <div class="swiper-button-next-custom" style="cursor: pointer; width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);"><i class="fas fa-chevron-right"></i></div>
                 </div>
-                <div class="testimonial-card" style="color: var(--dark-bg);">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Hands down the best WordPress designer I've worked with! He delivered incredibly fast, and I'm highly impressed with his aesthetic design skills."</p>
-                    <div class="testimonial-author">josephboss98 🇺🇸</div>
+            </div>
+            
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Faizan built an amazing AI marketing agency website for me... The visuals, animations and overall layout were executed flawlessly. Extremely happy!"</p>
+                            <div class="testimonial-author">yvoneesmith 🇺🇸</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Hands down the best WordPress designer I've worked with! He delivered incredibly fast, and I'm highly impressed with his aesthetic design skills."</p>
+                            <div class="testimonial-author">josephboss98 🇺🇸</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Faizan did an amazing job creating my eCommerce website! The site looks beautiful, runs smoothly, and feels super easy to navigate."</p>
+                            <div class="testimonial-author">rashadprice11 🇺🇸</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"The recreation of my fine dining restaurant and jazz bar is especially appreciated... We appreciate the recreation of the website! Thanks!"</p>
+                            <div class="testimonial-author">sitepiper 🇺🇸</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card" style="color: var(--dark-bg);">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Faizan did an amazing job creating my eCommerce website! The site looks beautiful, runs smoothly, and feels super easy to navigate."</p>
-                    <div class="testimonial-author">rashadprice11 🇺🇸</div>
-                </div>
-                <div class="testimonial-card" style="color: var(--dark-bg);">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"The recreation of my fine dining restaurant and jazz bar is especially appreciated... We appreciate the recreation of the website! Thanks!"</p>
-                    <div class="testimonial-author">sitepiper 🇺🇸</div>
-                </div>
+                <div class="swiper-pagination" style="margin-top: 2rem; position: relative; bottom: 0;"></div>
             </div>
         </div>
     </section>
@@ -305,35 +324,61 @@
             <p style="text-align: center; margin-bottom: 4rem;">Premium white-label dev shouldn't have enterprise-level delays.</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h4>Single Landing Page</h4>
+                    <h4>Landing Page</h4>
                     <div class="price">$499<span>/project</span></div>
-                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7;">
-                        <li><i class="fas fa-check"></i> 72hr Delivery</li>
-                        <li><i class="fas fa-check"></i> Conversion-Optimized</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
-                        <li><i class="fas fa-check"></i> 2 Rounds of Revision</li>
+                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7; font-size: 0.85rem;">
+                        <li><i class="fas fa-check"></i> Custom design from scratch</li>
+                        <li><i class="fas fa-check"></i> Mobile responsive design</li>
+                        <li><i class="fas fa-check"></i> Conversion-optimized layout</li>
+                        <li><i class="fas fa-check"></i> Up to 5 custom sections</li>
+                        <li><i class="fas fa-check"></i> AI-generated HD images</li>
+                        <li><i class="fas fa-check"></i> Full on-page SEO setup</li>
+                        <li><i class="fas fa-check"></i> Click-to-call + Contact form</li>
+                        <li><i class="fas fa-check"></i> Google Maps integration</li>
+                        <li><i class="fas fa-check"></i> White-label delivery</li>
+                        <li><i class="fas fa-check"></i> Speed optimization</li>
+                        <li><i class="fas fa-check"></i> 2 Rounds of revisions</li>
+                        <li><i class="fas fa-check"></i> 72-hour delivery</li>
+                        <li><i class="fas fa-check"></i> 14 Days support</li>
                     </ul>
                     <a href="https://calendly.com/twelvetechmedia/15min" class="btn btn-outline" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="pricing-card popular">
-                    <h4>WordPress/Shopify</h4>
+                    <h4>WordPress / Shopify</h4>
                     <div class="price">$999<span>/project</span></div>
-                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7;">
-                        <li><i class="fas fa-check"></i> Full Website Build</li>
-                        <li><i class="fas fa-check"></i> Custom Theme Dev</li>
-                        <li><i class="fas fa-check"></i> SEO Foundations</li>
-                        <li><i class="fas fa-check"></i> 7-Day Support</li>
+                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7; font-size: 0.85rem;">
+                        <li><i class="fas fa-check"></i> Full multi-page (up to 8)</li>
+                        <li><i class="fas fa-check"></i> Custom theme development</li>
+                        <li><i class="fas fa-check"></i> Mobile + Tablet optimized</li>
+                        <li><i class="fas fa-check"></i> Complete on-page SEO</li>
+                        <li><i class="fas fa-check"></i> AI-generated HD graphics</li>
+                        <li><i class="fas fa-check"></i> Blog setup + Sample post</li>
+                        <li><i class="fas fa-check"></i> Forms + Notifications</li>
+                        <li><i class="fas fa-check"></i> Analytics + Search Console</li>
+                        <li><i class="fas fa-check"></i> Social media integration</li>
+                        <li><i class="fas fa-check"></i> Image compression + Speed</li>
+                        <li><i class="fas fa-check"></i> SSL security setup</li>
+                        <li><i class="fas fa-check"></i> 3 Rounds of revisions</li>
+                        <li><i class="fas fa-check"></i> 3-5 Day delivery</li>
+                        <li><i class="fas fa-check"></i> 30 Days support</li>
                     </ul>
                     <a href="https://calendly.com/twelvetechmedia/15min" class="btn btn-primary" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h4>Agency Overflow</h4>
                     <div class="price">$Custom<span>/mo</span></div>
-                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7;">
-                        <li><i class="fas fa-check"></i> Dedicated Developer</li>
-                        <li><i class="fas fa-check"></i> Unlimited Projects</li>
-                        <li><i class="fas fa-check"></i> White-label Portal</li>
-                        <li><i class="fas fa-check"></i> Priority Slack Support</li>
+                    <ul style="text-align: left; margin: 2rem 0; opacity: 0.7; font-size: 0.85rem;">
+                        <li><i class="fas fa-check"></i> Dedicated agency developer</li>
+                        <li><i class="fas fa-check"></i> Unlimited project requests</li>
+                        <li><i class="fas fa-check"></i> Unbranded staging/delivery</li>
+                        <li><i class="fas fa-check"></i> Priority Slack/WhatsApp</li>
+                        <li><i class="fas fa-check"></i> 24hr Rush delivery available</li>
+                        <li><i class="fas fa-check"></i> Monthly project reporting</li>
+                        <li><i class="fas fa-check"></i> WP, Shopify, Webflow, Divi</li>
+                        <li><i class="fas fa-check"></i> SEO included on every build</li>
+                        <li><i class="fas fa-check"></i> AI image creation included</li>
+                        <li><i class="fas fa-check"></i> Revisions until happy</li>
+                        <li><i class="fas fa-check"></i> No minimum commitment</li>
                     </ul>
                     <a href="https://calendly.com/twelvetechmedia/15min" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
                 </div>
@@ -342,7 +387,7 @@
     </section>
 
 
-    <section id="founder" class="section">
+    <section id="founder" class="section" style="padding-bottom: 3rem;">
         <div class="container">
             <div class="case-study" style="margin-bottom: 0;">
                 <div class="case-visual no-overlay">
@@ -358,7 +403,7 @@
     </section>
 
 
-    <section id="comparison" class="section">
+    <section id="comparison" class="section" style="padding-top: 3rem;">
         <div class="container">
             <h2 style="text-align: center; display: block; margin-bottom: 4rem;">How We Compare</h2>
             <div class="table-wrapper">
@@ -460,22 +505,31 @@
 
     <section id="process" class="section">
         <div class="container">
-            <h2 style="text-align: center; display: block; margin-bottom: 2rem;">How It Works</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <h2 style="display: block; margin-bottom: 1rem;">How It Works</h2>
+                <p style="font-weight: 700; color: var(--primary-red); margin-bottom: 1.5rem;">From brief to delivery in as little as 48 hours.</p>
+                <p>We understand the challenges agencies face — tight deadlines, growing client demands, and the pressure to maintain profit margins. That's why we built a system that allows agencies to scale their web services quickly, reliably, and profitably.</p>
+            </div>
             <div class="process-steps">
                 <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Send the Brief</h4>
-                    <p>Share your project requirements or client's design files.</p>
+                    <div class="step-num">01</div>
+                    <h4>You Send the Brief</h4>
+                    <p>Share your client's requirements — Figma files, wireframes, content docs, or even a napkin sketch. We've worked with everything. The less you have, the more we fill in.</p>
                 </div>
                 <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>We Build</h4>
-                    <p>Our team of 15 developers builds your project in 72 hours.</p>
+                    <div class="step-num">02</div>
+                    <h4>We Build It</h4>
+                    <p>Your project gets assigned to a dedicated developer from our 15-person in-house team. You get a project manager, a Slack channel, and daily progress updates. No chasing. No ghosting.</p>
                 </div>
                 <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>You Launch</h4>
-                    <p>Review the work, launch the site, and take all the credit.</p>
+                    <div class="step-num">03</div>
+                    <h4>You Review on Staging</h4>
+                    <p>We deliver to a clean, unbranded staging URL. No Twelve Tech Media branding anywhere — not in the code, not in the metadata, not in the hosting. It looks like you built it.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h4>You Deliver & Get Paid</h4>
+                    <p>Present the finished site to your client as your own work. Charge your full rate. We handle revisions until everyone's happy. You keep 100% of the margin.</p>
                 </div>
             </div>
         </div>
