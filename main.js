@@ -6,10 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Swiper Testimonials FIRST
     let testimonialSwiper;
     try {
+        // Force destruction of any existing instance if it somehow exists
+        const existingSwiper = document.querySelector('.testimonial-swiper')?.swiper;
+        if (existingSwiper) existingSwiper.destroy();
+
         testimonialSwiper = new Swiper('.testimonial-swiper', {
             slidesPerView: 2,
+            slidesPerGroup: 1,
             spaceBetween: 30,
             loop: true,
+            centeredSlides: false,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
@@ -23,12 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 prevEl: '.swiper-button-prev-custom',
             },
             breakpoints: {
-                320: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 2 }
+                // Only drop to 1 on mobile
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                }
             }
         });
-        console.log("Swiper initialized successfully:", testimonialSwiper);
+        console.log("Swiper initialized successfully with 2 slides.");
     } catch (e) {
         console.error("Swiper initialization failed:", e);
     }

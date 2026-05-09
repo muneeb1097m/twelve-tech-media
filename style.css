@@ -1033,3 +1033,104 @@ footer {
         display: none !important;
     }
 }
+
+/* --- Process Alternating Row Design --- */
+.process-alternating {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.process-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.process-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.process-content {
+    flex: 1;
+}
+
+.process-visual {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.process-visual:hover {
+    transform: translateY(-10px);
+}
+
+.process-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.step-tag {
+    color: var(--primary-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.process-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-bg);
+}
+
+.process-content p {
+    font-size: 1.1rem;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 2rem;
+}
+
+.process-list {
+    list-style: none;
+    padding: 0;
+}
+
+.process-list li {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+    display: flex;
+    align-items: center;
+}
+
+.process-list li i {
+    color: var(--primary-red);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+    .process-row, .process-row.reverse {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .process-content h3 {
+        font-size: 2rem;
+    }
+
+    .process-list li {
+        justify-content: center;
+    }
+
+    .process-alternating {
+        gap: 5rem;
+    }
+}

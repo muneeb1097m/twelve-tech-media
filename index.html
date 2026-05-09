@@ -293,6 +293,20 @@
                             <div class="testimonial-author">sitepiper 🇺🇸</div>
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"TwelveTech is our go-to for all complex Webflow projects. They handle the technical debt so we can focus on creative strategy."</p>
+                            <div class="testimonial-author">digital_flow 🇬🇧</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card" style="color: var(--dark-bg); height: 100%;">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"The speed of delivery is unmatched. 48 hours for a landing page that actually converts is unheard of in this industry."</p>
+                            <div class="testimonial-author">marketing_pros 🇦🇺</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination" style="margin-top: 2rem; position: relative; bottom: 0;"></div>
             </div>
@@ -504,33 +518,81 @@
         </div>
     </section>
 
-    <section id="process" class="section">
+    <section id="process" class="section" style="background: var(--light-gray);">
         <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
                 <h2 style="display: block; margin-bottom: 1rem;">How It Works</h2>
                 <p style="font-weight: 700; color: var(--primary-red); margin-bottom: 1.5rem;">From brief to delivery in as little as 48 hours.</p>
                 <p>We understand the challenges agencies face — tight deadlines, growing client demands, and the pressure to maintain profit margins. That's why we built a system that allows agencies to scale their web services quickly, reliably, and profitably.</p>
             </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h4>You Send the Brief</h4>
-                    <p>Share your client's requirements — Figma files, wireframes, content docs, or even a napkin sketch. We've worked with everything. The less you have, the more we fill in.</p>
+            
+            <div class="process-alternating">
+                <!-- Step 1 -->
+                <div class="process-row">
+                    <div class="process-content">
+                        <div class="step-tag">01. Initial Phase</div>
+                        <h3>You Send the Brief</h3>
+                        <p>Share your client's requirements — Figma files, wireframes, content docs, or even a napkin sketch. We've worked with everything. The less you have, the more we fill in.</p>
+                        <ul class="process-list">
+                            <li><i class="fas fa-check"></i> Figma/Wireframe Review</li>
+                            <li><i class="fas fa-check"></i> Scope Analysis</li>
+                            <li><i class="fas fa-check"></i> 24hr Onboarding</li>
+                        </ul>
+                    </div>
+                    <div class="process-visual">
+                        <img src="brief_delivery_mockup_1778325981634.png" alt="Send the Brief Mockup">
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h4>We Build It</h4>
-                    <p>Your project gets assigned to a dedicated developer from our 15-person in-house team. You get a project manager, a Slack channel, and daily progress updates. No chasing. No ghosting.</p>
+
+                <!-- Step 2 -->
+                <div class="process-row reverse">
+                    <div class="process-content">
+                        <div class="step-tag">02. Development</div>
+                        <h3>We Build It</h3>
+                        <p>Your project gets assigned to a dedicated developer from our 15-person in-house team. You get a project manager, a Slack channel, and daily progress updates. No chasing. No ghosting.</p>
+                        <ul class="process-list">
+                            <li><i class="fas fa-check"></i> Dedicated Developer</li>
+                            <li><i class="fas fa-check"></i> Slack Channel Access</li>
+                            <li><i class="fas fa-check"></i> Daily Progress Clips</li>
+                        </ul>
+                    </div>
+                    <div class="process-visual">
+                        <img src="agency_dev_team_1778326003934.png" alt="Development Team illustration">
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h4>You Review on Staging</h4>
-                    <p>We deliver to a clean, unbranded staging URL. No Twelve Tech Media branding anywhere — not in the code, not in the metadata, not in the hosting. It looks like you built it.</p>
+
+                <!-- Step 3 -->
+                <div class="process-row">
+                    <div class="process-content">
+                        <div class="step-tag">03. Quality Control</div>
+                        <h3>You Review on Staging</h3>
+                        <p>We deliver to a clean, unbranded staging URL. No Twelve Tech Media branding anywhere — not in the code, not in the metadata, not in the hosting. It looks like you built it.</p>
+                        <ul class="process-list">
+                            <li><i class="fas fa-check"></i> White-label Staging</li>
+                            <li><i class="fas fa-check"></i> Client-Ready Previews</li>
+                            <li><i class="fas fa-check"></i> Pixel-Perfect Testing</li>
+                        </ul>
+                    </div>
+                    <div class="process-visual">
+                        <img src="staging_preview_mockup_1778326017310.png" alt="Staging Preview Mockup">
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">04</div>
-                    <h4>You Deliver & Get Paid</h4>
-                    <p>Present the finished site to your client as your own work. Charge your full rate. We handle revisions until everyone's happy. You keep 100% of the margin.</p>
+
+                <!-- Step 4 -->
+                <div class="process-row reverse">
+                    <div class="process-content">
+                        <div class="step-tag">04. Final Handover</div>
+                        <h3>You Deliver & Get Paid</h3>
+                        <p>Present the finished site to your client as your own work. Charge your full rate. We handle revisions until everyone's happy. You keep 100% of the margin.</p>
+                        <ul class="process-list">
+                            <li><i class="fas fa-check"></i> Final Assets Transfer</li>
+                            <li><i class="fas fa-check"></i> 100% Margin Retention</li>
+                            <li><i class="fas fa-check"></i> Post-Launch Support</li>
+                        </ul>
+                    </div>
+                    <div class="process-visual">
+                        <img src="profit_delivery_concept_1778326032040.png" alt="Project Delivery Mockup">
+                    </div>
                 </div>
             </div>
         </div>
