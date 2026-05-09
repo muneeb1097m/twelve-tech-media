@@ -1,6 +1,38 @@
 // TwelveTech Media - Premium Animations & Logic
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM loaded, initializing scripts...");
+
+    // Initialize Swiper Testimonials FIRST
+    let testimonialSwiper;
+    try {
+        testimonialSwiper = new Swiper('.testimonial-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next-custom',
+                prevEl: '.swiper-button-prev-custom',
+            },
+            breakpoints: {
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 }
+            }
+        });
+        console.log("Swiper initialized successfully:", testimonialSwiper);
+    } catch (e) {
+        console.error("Swiper initialization failed:", e);
+    }
+
     // Register GSAP Plugins
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -247,30 +279,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize Swiper Testimonials
-    const testimonialSwiper = new Swiper('.testimonial-swiper', {
-        slidesPerView: 2,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next-custom',
-            prevEl: '.swiper-button-prev-custom',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-            },
-            768: {
-                slidesPerView: 2,
-            }
-        }
-    });
+    }
 });
